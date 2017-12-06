@@ -10,8 +10,9 @@ namespace Arena_Fighter_1
     {
         private int itemToHitBonus;
         private int itemDamageBonus;
-        private string itemDamageDice;
-        public Weapon(string name, int cost, int toHitBonus, int damageBonus, string damageDice) : base(name, cost)
+        private int itemDamageDiceSize;
+        private int itemDamageDiceNumber;
+        public Weapon(string name, int cost, int toHitBonus, int damageBonus, int damageDice, int damageDiceNumber) : base(name, cost)
         {
             SetName(name);
             SetCost(cost);
@@ -27,20 +28,12 @@ namespace Arena_Fighter_1
         {
             itemDamageBonus = damageBonus;
         }
-        private void SetDamageDice(string damageDice)
+        private void SetDamageDice(int damageDice)
         {
-            itemDamageDice = damageDice;
+            itemDamageDiceSize = damageDice;
         }
 
         //The following methods allow other classes to 'get' values of the item
-        public string GetName()
-        {
-            return itemName;
-        }
-        public int GetCost()
-        {
-            return itemCost;
-        }
         public int GetToHitBonus()
         {
             return itemToHitBonus;
@@ -49,9 +42,13 @@ namespace Arena_Fighter_1
         {
             return itemDamageBonus;
         }
-        public string GetDamageDice()
+        public int GetDamageDice()
         {
-            return itemDamageDice;
+            return itemDamageDiceSize;
+        }
+        public int GetDamageDiceNumber()
+        {
+            return itemDamageDiceNumber;
         }
     }
 }

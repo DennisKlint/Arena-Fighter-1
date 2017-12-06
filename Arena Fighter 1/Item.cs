@@ -20,5 +20,14 @@ namespace Arena_Fighter_1
         protected void SetCost(int cost) {
             itemCost = cost;
         }
+
+        public string GetName()
+        {
+            return itemName;
+        }
+        public int GetCost()
+        {
+            return itemCost;
+        }
     }
 }

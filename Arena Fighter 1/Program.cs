@@ -10,7 +10,7 @@ namespace Arena_Fighter_1
     {
         static void Main(string[] args)
         {
-
+            MainGame mainGame = new MainGame();
         }
     }
 }

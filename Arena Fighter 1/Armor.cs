@@ -25,5 +25,13 @@ namespace Arena_Fighter_1
         {
             itemHpBonus = hpBonus;
         }
+        public int GetitemDefenceBonus()
+        {
+            return itemDefenceBonus;
+        }
+        public int GetItemHpBonus()
+        {
+            return itemHpBonus;
+        }
     }
 }

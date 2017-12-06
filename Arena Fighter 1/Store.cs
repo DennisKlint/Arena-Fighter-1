@@ -20,11 +20,11 @@ namespace Arena_Fighter_1
         private void AddWeapons()
         {
             // Valuesare as follows: name, cost, toHitBonus, damageBonus, damageDice
-            weapons.Add(new Weapon("Wood Sword  ",01,01,01,"1d6"));
-            weapons.Add(new Weapon("Copper Sword",02,02,02,"1d8"));
-            weapons.Add(new Weapon("Iron Sword  ",04,03,03,"1d12"));
-            weapons.Add(new Weapon("Silver Sword",08,04,04,"2d6"));
-            weapons.Add(new Weapon("Gold Sword  ",15,05,05,"3d6"));
+            weapons.Add(new Weapon("Wood Sword  ",01,01,01,6,1));
+            weapons.Add(new Weapon("Copper Sword",02,02,02,8,1));
+            weapons.Add(new Weapon("Iron Sword  ",04,03,03,12,1));
+            weapons.Add(new Weapon("Silver Sword",08,04,04,6,2));
+            weapons.Add(new Weapon("Gold Sword  ",15,05,05,6,3));
         }
         private void AddArmors()
         {
@@ -77,7 +77,26 @@ namespace Arena_Fighter_1
                     weapons[i].GetDamageDice() + " |");
             }
         }
-        private void ShowArmors() { }
+        private void ShowArmors()
+        {
+            Console.WriteLine("The better your armor, the more health points you'll have. You will also become harder to hit!");
+            for (int i = 0; armors.Capacity < i; i++)
+            {
+                Console.WriteLine("| " +armors[i].GetName() + " | " +
+                    armors[i].GetCost() + " | " +
+                    armors[i].GetitemDefenceBonus() + " | " +
+                    armors[i].GetItemHpBonus() + " | ");
+            }
+        }
         private void ShowRings() { }
+
+        public Weapon GetWeapon(int i)
+        {
+            return weapons[i];
+        }
+        public Armor GetArmor(int i)
+        {
+            return armors[i];
+        }
     }
 }
