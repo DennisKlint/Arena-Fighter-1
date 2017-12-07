@@ -12,25 +12,30 @@ namespace Arena_Fighter_1
         private int itemDamageBonus;
         private int itemDamageDiceSize;
         private int itemDamageDiceNumber;
-        public Weapon(string name, int cost, int toHitBonus, int damageBonus, int damageDice, int damageDiceNumber) : base(name, cost)
+        public Weapon(string name, int cost, int toHitBonus, int damageBonus, int damageDiceSize, int damageDiceNumber) : base(name, cost)
         {
             SetName(name);
             SetCost(cost);
             SetToHitBonus(toHitBonus);
+            SetDamageDiceNumber(damageDiceNumber);
+            SetDamageDice(damageDiceSize);
             SetDamageBonus(damageBonus);
-            SetDamageDice(damageDice);
         }
         private void SetToHitBonus(int toHitBonus)
         {
             itemToHitBonus = toHitBonus;
         }
-        private void SetDamageBonus(int damageBonus)
+        private void SetDamageDiceNumber(int damageDiceNumber)
         {
-            itemDamageBonus = damageBonus;
+            itemDamageDiceNumber = damageDiceNumber;
         }
         private void SetDamageDice(int damageDice)
         {
             itemDamageDiceSize = damageDice;
+        }
+        private void SetDamageBonus(int damageBonus)
+        {
+            itemDamageBonus = damageBonus;
         }
 
         //The following methods allow other classes to 'get' values of the item

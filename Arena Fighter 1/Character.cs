@@ -16,7 +16,7 @@ namespace Arena_Fighter_1
 
         private string characterName;
         private int characterScore;
-        private int characterMoney;
+        private int characterMoney = 5;
 
         //These are "Derived Attributes", they are affected by a characters attributes, and gear
         private int bonusToDamage;
@@ -84,7 +84,7 @@ namespace Arena_Fighter_1
         }
 
         // Updates ALL the Derived Attributes
-        private void UpdateDerivedAttributes()
+        public void UpdateDerivedAttributes()
         {
             bonusToDamage = CalcAttribute(str) + characterWeapon.GetDamageBonus();
             bonusToHit = CalcAttribute(str) + characterWeapon.GetToHitBonus();
@@ -124,6 +124,25 @@ namespace Arena_Fighter_1
                 "Armor: " + characterArmor.GetName() + Environment.NewLine +
                 "Money: " + characterMoney + Environment.NewLine +
                 "Score: " + characterScore);
+        }
+
+        //Apply damage to characters hp
+        public void TakeDamage(int damage) 
+            {
+            hp -= damage;
+            }
+
+        //Return true if alive, false if not
+        public bool IsCharacterAlive()
+        {
+            if (hp >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         //Allows other objects to "inspect" the elements of Character
